@@ -559,6 +559,10 @@
   firebase.initializeApp(firebaseConfig);
   const auth = firebase.auth();
 
+    .catch(error => {
+  console.log(error.code); // 'auth/user-not-found', 'auth/wrong-password', etc.
+});
+    
   // DOM Elements
   const loginForm = document.getElementById('loginForm');
   const emailInput = document.getElementById('email');
